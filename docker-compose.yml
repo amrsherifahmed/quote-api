@@ -1,0 +1,9 @@
+services:
+  quote-api:
+    build: .
+    image: quote-api:local
+    ports:
+      - "${HOST_PORT:-5001}:5000"
+    environment:
+      APP_VERSION: local
+    restart: unless-stopped
